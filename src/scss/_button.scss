@@ -1,0 +1,40 @@
+.form__btn {
+  margin-top: 1rem;
+  align-items: center;
+  text-align: center;
+  width: 250px;
+}
+
+.form__btn,
+.form__btn-sabmit {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0.5rem;
+  max-width: 300px;
+  min-width: 150px;
+  border: 2px solid #ffffff80;
+  border-radius: 4px;
+  outline: none;
+  line-height: 1.2;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $main-text-color-dark;
+  background-color: $main-text-color-light;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-bg-color;
+    color: $main-text-color-light;
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    background-color: #808080;
+    color: $main-text-color-dark;
+  }
+}

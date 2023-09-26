@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PKZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./dist/css/style.min.css" />
+  </head>
+  <body>
+    <style>
+    html{box-sizing:border-box;height:100hv;padding-bottom:45%}*,::after,::before{box-sizing:inherit}body,h1,h2,h3,h4,h5,h6,p{margin:0}button,ol,ul{margin:0;padding:0}img{display:block;max-width:100%;height:auto}a,label{-webkit-tap-highlight-color:transparent}.visually-hidden{position:absolute;white-space:nowrap;width:1px;height:1px;border:0;padding:0;clip:rect(0 0 0 0);-webkit-clip-path:inset(50%);clip-path:inset(50%);margin:-1px}.slider{max-width:100%;overflow:hidden}.slider__line{padding-top:.5rem;display:flex;transition:transform .5s ease-in-out}body{font-family:"Open Sans",sans-serif;font-weight:400;font-style:normal;line-height:1.111;letter-spacing:.03em;color:var(--main-text-color);background-color:#19545e;padding:1rem 0 0;-webkit-text-size-adjust:none}.calculator__image{height:10rem;background-color:#19545e;background-image:url(https://siladorog.ru/wp-content/uploads/2020/03/fura.jpg);background-repeat:no-repeat;background-position:center;background-size:cover}.link{color:inherit;text-decoration:none}.form__list>.form__item{list-style:none}.form__list>.form__item:not(:last-child){margin-bottom:1.5rem}.container{width:372px;margin-right:auto;margin-left:auto;border:2px solid #fff;border-radius:4px;overflow-y:auto;-webkit-overflow-scrolling:touch}@media screen and (min-width:810px){.container{width:570px}}.form{width:100%;margin-right:auto;margin-left:auto;padding:.5rem;font-size:14px;line-height:1.5;color:#fff;overflow:hidden}.form__subtitle{margin-bottom:.5rem}.form__delivery,.form__employer,.form__livingInPoland,.form__order,.form__visit{display:grid;justify-content:space-evenly}@media screen and (max-width:480px){.form__livingInPoland{margin-right:0;display:grid;justify-content:space-evenly}}.form__delivery>.form__label:not(:last-of-type),.form__employer>.form__label:not(:last-of-type),.form__livingInPoland>.form__label:not(:last-of-type),.form__order>.form__label:not(:last-of-type),.form__visit>.form__label:not(:last-of-type){margin-bottom:.5rem}.form__employer{display:grid;justify-content:space-evenly}.form__price-label{display:flex;margin-bottom:.5rem;align-items:center;text-transform:uppercase}@media screen and (min-width:650px){.form__price-label{justify-content:center}}.form__price-input{margin-left:.5rem;outline:0;border-radius:4px;text-align:center;padding:5px;font-size:14px;background-color:#bf9000;color:#fff;min-width:70px}.checkbox__style{display:inline-block;position:relative;padding-right:30px;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;user-select:none;transition:transform .25s ease-in-out}.checkbox__style input{position:absolute;opacity:0;cursor:pointer;height:0;width:0}.checkbox__style input:checked~.checkbox__checkmark{background-color:#fff}.checkbox__style input:checked~.checkbox__checkmark:after{opacity:1;left:8px}.checkbox__style:hover input:checked~.checkbox__checkmark,.checkbox__style:hover input~.checkbox__checkmark{background-color:#eee}.checkbox__style .checkbox__checkmark{position:absolute;top:1px;right:0;height:20px;width:20px;background-color:#eee;transition:background-color .25s;border-radius:4px}.checkbox__style .checkbox__checkmark.radio{border-radius:50%;height:20px;width:20px}.checkbox__style .checkbox__checkmark.radio:after{top:50%;left:50%;border-radius:50%;width:10px;height:10px;border-width:2px;background-color:#bf9000;transform:translate(-30%,-50%)}.checkbox__style .checkbox__checkmark:after{content:"";position:absolute;left:-18px;top:-6px;width:14px;height:20px;border:solid #bf9000;border-width:0 4px 4px 0;transform:rotate(45deg);opacity:0;transition:opacity .25s,left .25s}.checkbox__style .checkbox__body{color:#fff;font-size:inherit}.form__btn{margin-top:1rem;align-items:center;text-align:center;width:250px}.form__btn,.form__btn-sabmit{display:block;margin-right:auto;margin-left:auto;padding:.5rem;max-width:300px;min-width:150px;border:2px solid rgba(255,255,255,.5019607843);border-radius:4px;outline:0;line-height:1.2;font-size:12px;text-decoration:none;text-transform:uppercase;color:#212121;background-color:#fff;cursor:pointer;transition:background-color .25s ease-in-out,color .25s ease-in-out}.form__btn-sabmit:focus,.form__btn-sabmit:hover,.form__btn:focus,.form__btn:hover{background-color:#f41616;color:#fff}.form__btn-sabmit:disabled,.form__btn-sabmit:disabled:focus,.form__btn-sabmit:disabled:hover,.form__btn:disabled,.form__btn:disabled:focus,.form__btn:disabled:hover{background-color:gray;color:#212121}.contacts__wrapper{display:grid;align-items:baseline}.contacts__label:not(:last-of-type){margin-bottom:.5rem}.contacts__input{outline:0;display:block;width:99%;border:4px solid transparent;margin-bottom:1rem;border-radius:4px;padding:5px}.contacts__label>.contacts__input{margin-top:5px}.contacts__input::-webkit-inner-spin-button{display:none}.contacts__input--resize{resize:none}.contacts{display:block}.contacts__item{list-style:none;display:inline-grid;margin-right:25px}.contacts__text{margin-bottom:5px}.contacts__list{margin-bottom:15px}.contacts__address{margin-bottom:5px}.backdrop{position:fixed;top:0;left:0;width:100%;height:100%;opacity:1;background-color:rgba(0,0,0,.7);overflow-y:scroll;transition:opacity 250ms ease-in-out}.backdrop.is-hidden{opacity:0;pointer-events:none}.modal{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(1);width:450px;min-height:270px;padding:20px;background-color:#fff;color:#fff;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 1px rgba(0,0,0,.14),0 2px 1px rgba(0,0,0,.2);transition:transform 250ms ease-in-out}@media screen and (max-width:479px){.contacts__item{margin-right:15px}.modal{width:300px}}.modal__form{padding:10px}.modal__circuse{position:relative;margin-right:auto;margin-left:auto;margin-bottom:15px;width:80px;height:80px;border-radius:50%;background-color:#19545e}.modal__icon-like{display:inline-block;position:absolute;top:27%;left:25px;stroke:#fff;fill:#fff}.backdrop.is-hidden .modal{transform:translate(-50%,-50%) scale(.85)}.modal__text{font-weight:700;font-size:20px;line-height:1.5;text-align:center;color:#212121}@media screen and (max-width:479px){.modal__text{line-height:1.15}}.modal__submit{display:flex;width:100px;min-height:50px;border:none;margin-left:auto;margin-right:auto;margin-top:15px;box-shadow:0 4px 4px rgba(0,0,0,.15);border-radius:4px;cursor:pointer;justify-content:center;align-items:center;font-weight:700;font-size:16px;line-height:1.875;letter-spacing:.06em;background-color:#bf9000;color:#fff;text-decoration:none;transition:background-color 250ms ease-in-out}.modal__submit:focus,.modal__submit:hover{background-color:#f41616}@media(-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){body html{box-sizing:border-box;height:100hv;padding-bottom:45%}body *,body ::after,body ::before{box-sizing:inherit}body body,body h1,body h2,body h3,body h4,body h5,body h6,body p{margin:0}body button,body ol,body ul{margin:0;padding:0}body img{display:block;max-width:100%;height:auto}body a,body label{-webkit-tap-highlight-color:transparent}body .visually-hidden{position:absolute;white-space:nowrap;width:1px;height:1px;border:0;padding:0;clip:rect(0 0 0 0);-webkit-clip-path:inset(50%);clip-path:inset(50%);margin:-1px}body .slider{max-width:100%;overflow:hidden}body .slider__line{padding-top:.5rem;display:flex;transition:transform .5s ease-in-out}body body{font-family:"Open Sans",sans-serif;font-weight:400;font-style:normal;line-height:1.111;letter-spacing:.03em;color:var(--main-text-color);background-color:#19545e;padding:1rem 0 0;-webkit-text-size-adjust:none}body .calculator__image{height:10rem;background-color:#19545e;background-image:url(https://siladorog.ru/wp-content/uploads/2020/03/fura.jpg);background-repeat:no-repeat;background-position:center;background-size:cover}body .link{color:inherit;text-decoration:none}body .form__list>.form__item{list-style:none}body .form__list>.form__item:not(:last-child){margin-bottom:1.5rem}body .container{width:372px;margin-right:auto;margin-left:auto;border:2px solid #fff;border-radius:4px;overflow-y:auto;-webkit-overflow-scrolling:touch}}@media screen and (-webkit-min-device-pixel-ratio:2)and (min-width:810px),screen and (min-resolution:192dpi)and (min-width:810px){body .container{width:570px}}@media(-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){body .form{width:100%;margin-right:auto;margin-left:auto;padding:.5rem;font-size:14px;line-height:1.5;color:#fff;overflow:hidden}body .form__subtitle{margin-bottom:.5rem}body .form__delivery,body .form__employer,body .form__livingInPoland,body .form__order,body .form__visit{display:grid;justify-content:space-evenly}}@media screen and (-webkit-min-device-pixel-ratio:2)and (max-width:480px),screen and (min-resolution:192dpi)and (max-width:480px){body .form__livingInPoland{margin-right:0;display:grid;justify-content:space-evenly}}@media(-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){.form__delivery>body .form__label:not(:last-of-type),.form__employer>body .form__label:not(:last-of-type),.form__livingInPoland>body .form__label:not(:last-of-type),.form__order>body .form__label:not(:last-of-type),.form__visit>body .form__label:not(:last-of-type){margin-bottom:.5rem}body .form__employer{display:grid;justify-content:space-evenly}body .form__price-label{display:flex;margin-bottom:.5rem;align-items:center;text-transform:uppercase}}@media screen and (-webkit-min-device-pixel-ratio:2)and (min-width:650px),screen and (min-resolution:192dpi)and (min-width:650px){body .form__price-label{justify-content:center}}@media(-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){body .form__price-input{margin-left:.5rem;outline:0;border-radius:4px;text-align:center;padding:5px;font-size:14px;background-color:#bf9000;color:#fff;min-width:70px}body .checkbox__style{display:inline-block;position:relative;padding-right:30px;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;user-select:none;transition:transform .25s ease-in-out}body .checkbox__style input{position:absolute;opacity:0;cursor:pointer;height:0;width:0}body .checkbox__style input:checked~.checkbox__checkmark{background-color:#fff}body .checkbox__style input:checked~.checkbox__checkmark:after{opacity:1;left:8px}body .checkbox__style:hover input:checked~.checkbox__checkmark,body .checkbox__style:hover input~.checkbox__checkmark{background-color:#eee}body .checkbox__style .checkbox__checkmark{position:absolute;top:1px;right:0;height:20px;width:20px;background-color:#eee;transition:background-color .25s;border-radius:4px}body .checkbox__style .checkbox__checkmark.radio{border-radius:50%;height:20px;width:20px}body .checkbox__style .checkbox__checkmark.radio:after{top:50%;left:50%;border-radius:50%;width:10px;height:10px;border-width:2px;background-color:#bf9000;transform:translate(-30%,-50%)}body .checkbox__style .checkbox__checkmark:after{content:"";position:absolute;left:-18px;top:-6px;width:14px;height:20px;border:solid #bf9000;border-width:0 4px 4px 0;transform:rotate(45deg);opacity:0;transition:opacity .25s,left .25s}body .checkbox__style .checkbox__body{color:#fff;font-size:inherit}body .form__btn{margin-top:1rem;align-items:center;text-align:center;width:250px}body .form__btn,body .form__btn-sabmit{display:block;margin-right:auto;margin-left:auto;padding:.5rem;max-width:300px;min-width:150px;border:2px solid rgba(255,255,255,.5019607843);border-radius:4px;outline:0;line-height:1.2;font-size:12px;text-decoration:none;text-transform:uppercase;color:#212121;background-color:#fff;cursor:pointer;transition:background-color .25s ease-in-out,color .25s ease-in-out}body .form__btn-sabmit:focus,body .form__btn-sabmit:hover,body .form__btn:focus,body .form__btn:hover{background-color:#f41616;color:#fff}body .form__btn-sabmit:disabled,body .form__btn-sabmit:disabled:focus,body .form__btn-sabmit:disabled:hover,body .form__btn:disabled,body .form__btn:disabled:focus,body .form__btn:disabled:hover{background-color:gray;color:#212121}body .contacts__wrapper{display:grid;align-items:baseline}body .contacts__label:not(:last-of-type){margin-bottom:.5rem}body .contacts__input{outline:0;display:block;width:99%;border:4px solid transparent;margin-bottom:1rem;border-radius:4px;padding:5px}.contacts__label>body .contacts__input{margin-top:5px}body .contacts__input::-webkit-inner-spin-button{display:none}body .contacts__input--resize{resize:none}body .contacts{display:block}body .contacts__item{list-style:none;display:inline-grid;margin-right:25px}body .contacts__text{margin-bottom:5px}body .contacts__list{margin-bottom:15px}body .contacts__address{margin-bottom:5px}body .backdrop{position:fixed;top:0;left:0;width:100%;height:100%;opacity:1;background-color:rgba(0,0,0,.7);overflow-y:scroll;transition:opacity 250ms ease-in-out}body .backdrop.is-hidden{opacity:0;pointer-events:none}body .modal{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(1);width:450px;min-height:270px;padding:20px;background-color:#fff;color:#fff;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 1px rgba(0,0,0,.14),0 2px 1px rgba(0,0,0,.2);transition:transform 250ms ease-in-out}}@media screen and (-webkit-min-device-pixel-ratio:2)and (max-width:479px),screen and (min-resolution:192dpi)and (max-width:479px){body .contacts__item{margin-right:15px}body .modal{width:300px}}@media(-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){body .modal__form{padding:10px}body .modal__circuse{position:relative;margin-right:auto;margin-left:auto;margin-bottom:15px;width:80px;height:80px;border-radius:50%;background-color:#19545e}body .modal__icon-like{display:inline-block;position:absolute;top:27%;left:25px;stroke:#fff;fill:#fff}body .backdrop.is-hidden .modal{transform:translate(-50%,-50%) scale(.85)}body .modal__text{font-weight:700;font-size:20px;line-height:1.5;text-align:center;color:#212121}}@media screen and (-webkit-min-device-pixel-ratio:2)and (max-width:479px),screen and (min-resolution:192dpi)and (max-width:479px){body .modal__text{line-height:1.15}}@media(-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){body .modal__submit{display:flex;width:100px;min-height:50px;border:none;margin-left:auto;margin-right:auto;margin-top:15px;box-shadow:0 4px 4px rgba(0,0,0,.15);border-radius:4px;cursor:pointer;justify-content:center;align-items:center;font-weight:700;font-size:16px;line-height:1.875;letter-spacing:.06em;background-color:#bf9000;color:#fff;text-decoration:none;transition:background-color 250ms ease-in-out}body .modal__submit:focus,body .modal__submit:hover{background-color:#f41616}}
+    </style>
+
+    <section>
+      <h1 class="visually-hidden">Code 95</h1>
+      <div class="container">
+        <div class="calculator__image"></div>
+        <form action="#" class="form" id="form">
+          <div class="slider">
+            <div class="slider__line">
+              <ul class="form__list slider__item">
+                <li class="form__item">
+                  <div class="checkbox__body form__subtitle">
+                    Подачу документов осуществляю:
+                  </div>
+                  <div class="form__visit" id="form__visit">
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        id="office"
+                        type="radio"
+                        name="readyToComeInOffice"
+                        value="office"
+                        checked
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">лично в Варшаве</div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        id="remotely"
+                        type="radio"
+                        name="readyToComeInOffice"
+                        value="remotely"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">удалённо</div>
+                    </label>
+                  </div>
+                </li>
+                <li class="form__item" id="order">
+                  <div class="checkbox__body form__subtitle">
+                    Хочу заказать:
+                  </div>
+                  <div class="form__order">
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        data-order="короткий код 95"
+                        id="shortCode95"
+                        type="radio"
+                        value="shortCode95"
+                        name="orderCode"
+                        checked
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        профиль PKZ для обучения на Короткий Код 95
+                      </div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        data-order="длинный код 95"
+                        id="longCode95"
+                        type="radio"
+                        value="longCode95"
+                        name="orderCode"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        профиль PKZ для обучения на Длинный Код 95
+                      </div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        data-order="пластиковый Код 95 на основе бумажного Кода 95 PL"
+                        id="plasticByPaperCode95"
+                        type="radio"
+                        value="plasticByPaperCode95"
+                        name="orderCode"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        пластиковый Код 95 на основе бумажного Кода 95 PL
+                      </div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        data-order="пластиковый Код 95 на основе пластикового Кода 95 PL"
+                        id="plasticByPlasticCode95"
+                        type="radio"
+                        value="plasticByPlasticCode95"
+                        name="orderCode"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        пластиковый Код 95 на основе пластикового Кода 95 PL
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="form__item" id="delivery">
+                  <div class="checkbox__body form__subtitle">
+                    Выберите способ получения карты:
+                  </div>
+                  <div class="form__delivery">
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        id="ownAddres"
+                        type="radio"
+                        value="ownAddres"
+                        name="deliveryMethod"
+                        checked
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        польский адрес - ЛИЧНО получу заказное письмо
+                      </div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        id="getInOffice"
+                        type="radio"
+                        value="getInOffice"
+                        name="deliveryMethod"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        офис в Варшаве - лично или представитель
+                      </div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        id="shippmentInPoland"
+                        type="radio"
+                        value="shippmentInPoland"
+                        name="deliveryMethod"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        выслать в Польше иному лицу заказным письмом
+                      </div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        id="shipmentInternational"
+                        type="radio"
+                        value="shipmentInternational"
+                        name="deliveryMethod"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        пересылка международная (кроме РФ)
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="form__item">
+                  <div class="checkbox__body form__subtitle">
+                    Я работаю или живу в Польше:
+                  </div>
+                  <div class="form__livingInPoland">
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        data-livingInPoland="менее 6 месяцев"
+                        id="less6month"
+                        type="radio"
+                        name="livingInPoland"
+                        value="lessSixMonth"
+                        checked
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">менее 6 месяцев</div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        data-livingInPoland="свыше 6 месяцев"
+                        id="more6month"
+                        type="radio"
+                        name="livingInPoland"
+                        value="moreSixMonth"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">свыше 6 месяцев</div>
+                    </label>
+                  </div>
+                </li>
+                <li class="form__item">
+                  <div class="checkbox__body form__subtitle">
+                    Данные работодателя:
+                  </div>
+                  <div class="form__employer">
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        data-infoEmployer="у меня есть данные своего польского работодателя"
+                        id="plEmployer"
+                        type="radio"
+                        name="employer"
+                        value="plEmployer"
+                        checked
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        у меня есть данные своего польского работодателя
+                      </div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        data-infoEmployer="у меня есть НЕпольский работодатель"
+                        id="anotherEmployer"
+                        type="radio"
+                        name="employer"
+                        value="anotherEmployer"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        у меня есть НЕпольский работодатель
+                      </div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        data-infoEmployer="нет работодателя, я пока в поиске"
+                        id="havenotEmployer"
+                        type="radio"
+                        name="employer"
+                        value="havenotEmployer"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        нет работодателя, я пока в поиске
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="form__item" id="whoPay">
+                  <div class="checkbox__body form__subtitle">
+                    Кто оплачивает изготовление кода:
+                  </div>
+                  <div class="form__delivery">
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        id="byMyselfZl"
+                        data-pay="byMyself"
+                        type="radio"
+                        value="Oплачиваю самостоятельно в злотых"
+                        name="whoPay"
+                        checked
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        Oплачиваю самостоятельно в злотых
+                      </div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        id="byMyselfEuro"
+                        data-pay="byMyselfEuro"
+                        type="radio"
+                        value="Oплачиваю самостоятельно в евро"
+                        name="whoPay"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        Oплачиваю самостоятельно в евро
+                      </div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        id="byCompanyZl"
+                        data-pay="byCompanyZl"
+                        type="radio"
+                        value="Oплачивает фирма в злотых"
+                        name="whoPay"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">
+                        Oплачивает фирма в злотых
+                      </div>
+                    </label>
+                    <label class="form__label checkbox__style checkbox__radio">
+                      <input
+                        id="byCompanyEuro"
+                        data-pay="byCompanyEuro"
+                        type="radio"
+                        value="Oплачивает фирма в евро"
+                        name="whoPay"
+                      />
+                      <div class="checkbox__checkmark radio"></div>
+                      <div class="checkbox__body">Oплачивает фирма в евро</div>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="slider__item second-page">
+                <div class="form__summ">
+                  <label
+                    id="totalPrice"
+                    for="totalPriceValue"
+                    name="totalPrice"
+                    class="form__price-label"
+                    >Стоимость услуги:
+                    <input
+                      class="form__price-input"
+                      id="totalPriceValue"
+                      type="text"
+                      readonly
+                    />
+                  </label>
+                </div>
+
+                <!-- КОНТАКТЫ -->
+                <div
+                  class="calculator__contacts contacts visually-hidden"
+                  id="contacts"
+                >
+                  <div class="contacts__wrapper">
+                    <label
+                      for="clientName"
+                      class="contacts__label"
+                      title="name"
+                    >
+                      Имя, фамилия латинскими (как в правах):
+                    </label>
+                    <input
+                      class="contacts__input"
+                      type="text"
+                      id="clientName"
+                      minlength="2"
+                      name="clientName"
+                      placeholder=" "
+                      required
+                    />
+                    <label
+                      for="email"
+                      class="contacts__label"
+                      title="email"
+                      id="clientEmail"
+                    >
+                      E-mail:
+                      <input
+                        class="contacts__input"
+                        type="text"
+                        id="email"
+                        minlength="5"
+                        name="email"
+                        placeholder=" "
+                        required
+                      />
+                    </label>
+
+                    <label
+                      for="phone"
+                      class="contacts__label"
+                      title="telNumber"
+                    >
+                      Телефон (с кодом страны, без пробелов и тире):
+                    </label>
+                    <input
+                      class="contacts__input"
+                      type="text"
+                      id="telNumber"
+                      minlength="8"
+                      maxlength="17"
+                      name="phone"
+                      placeholder=" "
+                      required
+                    />
+                    <p class="contacts__text">Мой телефон есть в:</p>
+                    <ul class="contacts__list">
+                      <li class="contacts__item">
+                        <label
+                          for="Viber"
+                          class="contacts__checkbox checkbox__style"
+                        >
+                          <input
+                            class="contacts__input"
+                            type="checkbox"
+                            id="Viber"
+                            value="Viber"
+                          />
+                          <div class="checkbox__checkmark"></div>
+                          <div class="checkbox__body">Viber</div>
+                        </label>
+                      </li>
+                      <li class="contacts__item">
+                        <label
+                          for="Telegram"
+                          class="contacts__checkbox checkbox__style"
+                        >
+                          <input
+                            class="contacts__input"
+                            type="checkbox"
+                            id="Telegram"
+                            value="Telegram"
+                          />
+                          <div class="checkbox__checkmark"></div>
+                          <div class="checkbox__body">Telegram</div>
+                        </label>
+                      </li>
+                      <li class="contacts__item">
+                        <label
+                          for="WhatsApp"
+                          class="contacts__checkbox checkbox__style"
+                        >
+                          <input
+                            class="contacts__input"
+                            type="checkbox"
+                            id="WhatsApp"
+                            value="WhatsApp"
+                          />
+                          <div class="checkbox__checkmark"></div>
+                          <div class="checkbox__body">WhatsApp</div>
+                        </label>
+                      </li>
+                    </ul>
+
+                    <label
+                      for="email"
+                      class="contacts__label"
+                      title="email"
+                      id="clientEmail"
+                    >
+                      Страна, в которой вы родились:
+                      <input
+                        class="contacts__input"
+                        type="text"
+                        id="country"
+                        name="country"
+                        placeholder=" "
+                        required
+                      />
+                    </label>
+
+                    <label
+                      for="dateVisit"
+                      class="contacts__label"
+                      title="visit date"
+                      id="dateVisit"
+                    >
+                      Укажите желаемую дату визита к нам в офис:
+                      <input
+                        class="contacts__input"
+                        type="date"
+                        id="dateVisitInput"
+                        minlength="8"
+                        maxlength="17"
+                        name="dateVisit"
+                        placeholder=" "
+                      />
+                    </label>
+
+                    <label
+                      for="pesel"
+                      id="peselNumber"
+                      class="contacts__label"
+                      title="pesel"
+                    >
+                      Номер Pesel (если нет PESEL - вписать дату рождения 6 цифр
+                      + 3 нуля):
+                    </label>
+                    <input
+                      class="contacts__input"
+                      type="number"
+                      id="pesel"
+                      minlength="11"
+                      maxlength="11"
+                      name="pesel"
+                      placeholder=" "
+                      title="Введите цифры от 0 до 9"
+                    />
+
+                    <label
+                      for="address"
+                      class="contacts__label contacts__address"
+                      title="name"
+                      id="deliveryAddress"
+                    >
+                      Адрес высылки готовой карты:
+                      <textarea
+                        class="contacts__input contacts__input--resize"
+                        rows="5"
+                        id="address"
+                        name="address"
+                        placeholder=" "
+                        autocomplete="off"
+                      ></textarea>
+                    </label>
+                  </div>
+
+                  <button type="submit" class="form__btn-sabmit">
+                    Заказать
+                  </button>
+                </div>
+                <!-- КОНТАКТЫ конец-->
+
+                <a
+                  href="https://www.kod95.org/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F#h.ewtnfzjzfmyu"
+                  class="form__btn"
+                  id="exitFormBtn"
+                  >Выйти без оформления заказа</a
+                >
+              </div>
+            </div>
+          </div>
+          <button type="button" class="form__btn" id="slider__next">
+            Дальше
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- modal -->
+
+    <div
+      class="backdrop visually-hidden is-hidden"
+      id="modalFail"
+      data-modal
+      data-modal--good
+    >
+      <div class="modal">
+        <form action="" class="modal__form">
+          <div class="modal__circuse">
+            <svg class="modal__icon modal__icon-like">
+              <path
+                d="M29.164 10.472c-1.25-0.328-4.189-0.324-8.488-0.438 0.203-0.938 0.25-1.784 0.25-3.286 0-3.588-2.614-6.748-4.926-6.748-1.633 0-2.979 1.335-3 2.977-0.022 2.014-0.645 5.492-4 7.256-0.246 0.13-0.95 0.477-1.053 0.522l0.053 0.045c-0.525-0.453-1.253-0.8-2-0.8h-3c-1.654 0-3 1.346-3 3v16c0 1.654 1.346 3 3 3h3c1.19 0 2.186-0.719 2.668-1.727 0.012 0.004 0.033 0.010 0.047 0.012 0.066 0.018 0.144 0.037 0.239 0.062 0.018 0.005 0.027 0.007 0.046 0.012 0.576 0.143 1.685 0.408 4.055 0.953 0.508 0.116 3.192 0.688 5.972 0.688h5.467c1.666 0 2.867-0.641 3.582-1.928 0.010-0.020 0.24-0.469 0.428-1.076 0.141-0.457 0.193-1.104 0.023-1.76 1.074-0.738 1.42-1.854 1.645-2.58 0.377-1.191 0.264-2.086 0.002-2.727 0.604-0.57 1.119-1.439 1.336-2.766 0.135-0.822-0.010-1.668-0.389-2.372 0.566-0.636 0.824-1.436 0.854-2.176l0.012-0.209c0.007-0.131 0.013-0.212 0.013-0.5 0-1.263-0.875-2.874-2.836-3.434zM7 29c0 0.553-0.447 1-1 1h-3c-0.553 0-1-0.447-1-1v-16c0-0.553 0.447-1 1-1h3c0.553 0 1 0.447 1 1v16zM29.977 14.535c-0.020 0.494-0.227 1.465-1.977 1.465-1.5 0-2 0-2 0-0.277 0-0.5 0.224-0.5 0.5s0.223 0.5 0.5 0.5c0 0 0.438 0 1.938 0s1.697 1.244 1.6 1.844c-0.124 0.746-0.474 2.156-2.163 2.156-1.687 0-2.375 0-2.375 0-0.277 0-0.5 0.223-0.5 0.5 0 0.275 0.223 0.5 0.5 0.5 0 0 1.188 0 1.969 0 1.688 0 1.539 1.287 1.297 2.055-0.319 1.009-0.514 1.945-2.641 1.945-0.719 0-1.631 0-1.631 0-0.277 0-0.5 0.223-0.5 0.5 0 0.275 0.223 0.5 0.5 0.5 0 0 0.693 0 1.568 0 1.094 0 1.145 1.035 1.031 1.406-0.125 0.406-0.273 0.707-0.279 0.721-0.302 0.545-0.789 0.873-1.82 0.873h-5.467c-2.746 0-5.47-0.623-5.54-0.639-4.154-0.957-4.373-1.031-4.634-1.105 0 0-0.846-0.143-0.846-0.881l-0.007-13.812c0-0.469 0.299-0.893 0.794-1.042 0.062-0.024 0.146-0.050 0.206-0.075 4.568-1.892 5.959-6.040 6-9.446 0.006-0.479 0.375-1 1-1 1.057 0 2.926 2.122 2.926 4.748 0 2.371-0.096 2.781-0.926 5.252 10 0 9.93 0.144 10.812 0.375 1.094 0.313 1.188 1.219 1.188 1.531 0 0.343-0.010 0.293-0.023 0.629zM4.5 26c-0.828 0-1.5 0.672-1.5 1.5s0.672 1.5 1.5 1.5 1.5-0.672 1.5-1.5-0.672-1.5-1.5-1.5zM4.5 28c-0.275 0-0.5-0.225-0.5-0.5s0.225-0.5 0.5-0.5 0.5 0.225 0.5 0.5-0.225 0.5-0.5 0.5z"
+              ></path>
+            </svg>
+          </div>
+
+          <p class="modal__text">Спасибо, заявка отправлена.</p>
+          <p class="modal__text">
+            В ближайшее время наш менеджер свяжется с Вами.
+          </p>
+        </form>
+
+        <a
+          href="https://www.kod95.org/%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%B8-%D1%86%D0%B5%D0%BD%D1%8B/%D1%87%D0%B8%D0%BF-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D1%82%D0%B0%D1%85%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B0"
+          class="modal__submit"
+          >OK</a
+        >
+      </div>
+    </div>
+
+    <!-- modal end -->
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+    const BASE_COST = "150"; // базовая цена карты
+const surcharge = "100"; // доплата, если клиент хочет заказать код на основе бумажного или пластикового кода, или если живет в Польше больше 6 мес, или если нет работодателя или работодатель не польский с одновременным условием КОРОТКИЙ КОД
+
+const submissionOfDocuments = {
+  office: "0", //подача в Варшаве
+  remotely: "75", // подача удаленно
+};
+
+const deliveryPrices = {
+  ownAddres: "0", // свой адрес (с личным получением заказного письма)
+  getInOffice: "50", // получение в офисе
+  shippmentInPoland: "100", // пересылка по Польше
+  shipmentInternational: "130", // международная пересылка, кроме РФ
+};
+
+const orderCode = {
+  shortCode95: "0", // профиль PKZ для обучения на Короткий Код 95
+  longCode95: "0", // профиль PKZ для обучения на Длинный Код 95
+  plasticByPaperCode95: surcharge, // пластиковый Код 95 на основе бумажного Кода 95 PL (+100)
+  plasticByPlasticCode95: surcharge, // пластиковый Код 95 на основе пластикового Кода 95 PL (+100)
+};
+
+const stayInPoland = {
+  moreSixMonth: surcharge, // больше 6 мес в Польше
+  lessSixMonth: "0", // меньше  6 мес в Польше
+};
+
+const employer = {
+  plEmployer: "0", // польский работодатель
+  anotherEmployer: surcharge, // не польский работодатель
+  havenotEmployer: surcharge, // нет работодателя
+};
+
+// SLIDER
+const formSlider = document.querySelectorAll(
+  ".slider .slider__line .slider__item"
+);
+
+const sliderLine = document.querySelector(".slider__line");
+const sliderBtn = document.querySelector("#slider__next");
+const secondPage = document.querySelector(".second-page");
+let count = 0;
+let width = document.querySelector(".slider").offsetWidth;
+
+init();
+window.addEventListener("resize", init);
+sliderBtn.addEventListener("click", onBtnNext);
+sliderBtn.addEventListener("click", onChangeInputValue);
+
+function init() {
+  if (width !== document.querySelector(".slider").offsetWidth) {
+    width === document.querySelector(".slider").offsetWidth;
+  }
+  sliderLine.style.width = width * formSlider.length + "px";
+  formSlider.forEach(item => {
+    item.style.width = width + "px";
+  });
+}
+
+function onBtnNext() {
+  count++;
+  if (count >= formSlider.length) {
+    count = 0;
+  }
+
+  count === 1
+    ? ((sliderBtn.textContent = "Назад"),
+      (document.body.scrollTop = 0), // For Safari,
+      (document.documentElement.scrollTop = 0),
+      sliderBtn.blur(),
+      removeClass(refs.contacts, "visually-hidden", "is-hidden"),
+      removeClass(secondPage, "visually-hidden", "is-hidden"),
+      addClass(refs.deliveryItem, "visually-hidden", "is-hidden"),
+      addClass(refs.orderItem, "visually-hidden", "is-hidden"),
+      addClass(refs.whopayItem, "visually-hidden", "is-hidden"))
+    : ((sliderBtn.textContent = "Дальше"),
+      sliderBtn.blur(),
+      addClass(refs.contacts, "visually-hidden", "is-hidden"),
+      addClass(secondPage, "visually-hidden", "is-hidden"),
+      removeClass(refs.deliveryItem, "visually-hidden", "is-hidden"),
+      removeClass(refs.orderItem, "visually-hidden", "is-hidden"),
+      removeClass(refs.whopayItem, "visually-hidden", "is-hidden"));
+
+  rollSlider();
+}
+
+function rollSlider() {
+  sliderLine.style.transform = `translate(-${+count * width}px)`;
+}
+
+//FORM LOGIC
+
+const refs = {
+  form: document.querySelector("#form"),
+  whopayItem: document.getElementById("whoPay"),
+  orderItem: document.getElementById("order"),
+  deliveryItem: document.getElementById("delivery"),
+  deliveryAddress: document.querySelector("#deliveryAddress"),
+  dateOfVisit: document.querySelector("#dateVisit"),
+  totalPrice: document.querySelector("#totalPriceValue"),
+  contacts: document.querySelector("#contacts"),
+  backdrop: document.querySelector(".backdrop"),
+};
+
+const EMAIL_REGEXP =
+  /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+{
+  refs.totalPrice.value = BASE_COST + " zl";
+  refs.form.addEventListener("change", onChangeInputValue);
+  refs.form.addEventListener("submit", onCalculatorFormSubmit);
+  document.getElementById("telNumber").addEventListener("input", onInputTel);
+  document.getElementById("email").addEventListener("input", onInput);
+  document.getElementById("pesel").addEventListener("input", onInputPesel);
+}
+
+function onChangeInputValue() {
+  const visited = findCheckedItem("readyToComeInOffice");
+  const ordered = findCheckedItem("orderCode");
+  const delivery = findCheckedItem("deliveryMethod");
+  const lengthOfStayInPoland = findCheckedItem("livingInPoland");
+  const dataEmployer = findCheckedItem("employer");
+  let supplementForLiving = stayInPoland[lengthOfStayInPoland];
+  let supplementForEmployer;
+  let supplement;
+
+  if (visited === "remotely") {
+    addClass(refs.dateOfVisit, "visually-hidden", "is-hidden");
+  } else {
+    removeClass(refs.dateOfVisit, "visually-hidden", "is-hidden");
+  }
+
+  if (delivery === "getInOffice") {
+    addClass(refs.deliveryAddress, "visually-hidden", "is-hidden");
+  } else {
+    removeClass(refs.deliveryAddress, "visually-hidden", "is-hidden");
+  }
+
+  if (dataEmployer === "plEmployer") {
+    supplementForEmployer = employer[dataEmployer];
+  } else if (dataEmployer !== "plEmployer" && ordered === "shortCode95") {
+    supplementForEmployer = employer[dataEmployer];
+  } else if (ordered === "shortCode95") {
+    supplementForEmployer = 0;
+  } else {
+    supplementForEmployer = 0;
+  }
+
+  if (
+    +orderCode[ordered] > 0 ||
+    +supplementForLiving > 0 ||
+    +supplementForEmployer > 0
+  ) {
+    supplement = surcharge;
+  } else {
+    supplement = 0;
+  }
+
+  refs.totalPrice.value =
+    +BASE_COST + +deliveryPrices[delivery] + +supplement + " zl";
+}
+
+function onCalculatorFormSubmit(event) {
+  event.preventDefault();
+
+  const personalSubmissionOfDocs = findCheckedItem("readyToComeInOffice");
+  const clientName = document.getElementById("clientName").value.trim();
+  const clientTelephone = document.getElementById("telNumber").value.trim();
+  const myPhoneIsIn = [...document.querySelectorAll(".contacts__input")]
+    .filter(el => el.checked)
+    .map(el => el.value);
+  const clientEmail = document.getElementById("email").value.trim();
+  const clientPesel = document.getElementById("pesel").value.trim();
+  const clientCountry = document.getElementById("country").value.trim();
+  const delivery = [
+    ...document.querySelectorAll(`[name="deliveryMethod"]`),
+  ].find(item => item.checked).parentNode.innerText;
+  const clientAddress = document.getElementById("address").value.trim()
+    ? document.getElementById("address").value.trim()
+    : " ";
+  const dateOfVisit = document.getElementById("dateVisitInput").value.trim();
+  const whoPay = [...document.querySelectorAll("[data-pay]")]
+    .find(item => item.checked)
+    .value.trim();
+  const wantToOrder = [...document.querySelectorAll("[data-order]")].find(
+    item => item.checked
+  );
+  const livingInPoland = [
+    ...document.querySelectorAll("[data-livingInPoland]"),
+  ].find(item => item.checked);
+
+  const infoEmployer = [
+    ...document.querySelectorAll("[data-infoEmployer]"),
+  ].find(item => item.checked);
+
+  try {
+    Email.send({
+      SecureToken: "ec88ce96-761e-461f-9b06-00ca22ca8bfb",
+      To: "infobynet@gmail.com",
+      From: "infobynet@gmail.com",
+
+      Subject: "ЗАЯВКА на PKZ",
+      Body: `Code95 <hr/>
+            Имя:  &#x20; ${clientName}, <br/>
+            Почта: &#x20; ${clientEmail}, <br/>
+            Телефон: &#x20; ${clientTelephone}, <br/>
+            Мой телефон есть в: &#x20; ${myPhoneIsIn}, <br/>
+            Номер Pesel:  &#x20; ${clientPesel}, <br/>
+            Страна, в которой родился клиент: ${clientCountry}, <br/>
+            Хочу заказать: ${wantToOrder.dataset.order}, <br/>
+            Я работаю или живу в Польше: ${
+              livingInPoland.dataset.livinginpoland
+            }, <br/>
+            Подача документов: ${personalSubmissionOfDocs}, <br/>
+            ${
+              dateOfVisit !== "<hr/>"
+                ? `Желаемая дата посещения офиса: ${dateOfVisit}`
+                : ""
+            } <br/>
+            Способ доставки: ${delivery}    <br/>  
+            ${
+              delivery === "офис в Варшаве - лично или представитель"
+                ? ""
+                : `Адресс доставки: ${clientAddress} `
+            }                  
+             <br/>
+             Данные работодателя: ${infoEmployer.dataset.infoemployer}, <br/>  
+            Кто платит: ${whoPay}   <br/>
+            Стоимость услуги: &#x20; ${refs.totalPrice.value} <hr/>            
+           
+    `,
+    }).then(data => removeClass(refs.backdrop, "visually-hidden", "is-hidden"));
+  } catch (error) {
+    alert("Не удалось отправить заявку");
+    console.log(error);
+  }
+
+  event.currentTarget.reset();
+}
+
+function addClass(element, ...className) {
+  return element.classList.add(...className);
+}
+
+function removeClass(element, ...className) {
+  return element.classList.remove(...className);
+}
+
+function onInput(e) {
+  const email = e.target.value.trim();
+
+  if (isEmailValid(email)) {
+    e.target.style.borderColor = "#2E8B57cc";
+  } else {
+    e.target.style.borderColor = "#CD5C5Ccc";
+  }
+}
+
+function onInputTel(e) {
+  if (String(e.target.value).length > 7 && String(e.target.value).length < 17) {
+    e.target.style.borderColor = "#2E8B57cc";
+  } else {
+    e.target.style.borderColor = "#CD5C5Ccc";
+  }
+}
+
+function onInputPesel(e) {
+  if (String(e.target.value).length > 6) {
+    e.target.style.borderColor = "#2E8B57cc";
+  } else {
+    e.target.style.borderColor = "#CD5C5Ccc";
+  }
+}
+
+function isEmailValid(value) {
+  return EMAIL_REGEXP.test(value);
+}
+
+function findCheckedItem(colectionsName) {
+  return [...document.querySelectorAll(`[name=${colectionsName}]`)].find(
+    item => item.checked
+  ).value;
+}
+
+    </script>
+  </body>
+</html>

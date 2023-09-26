@@ -1,0 +1,41 @@
+{
+  "name": "calculator",
+  "version": "0.0.1",
+  "description": "calculator",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anastasia-A-2020/calculator.git"
+  },
+  "keywords": [
+    "card",
+    "category CE",
+    "app",
+    "project"
+  ],
+  "author": " Anastasia Aleksandrova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anastasia-A-2020/issues"
+  },
+  "homepage": "https://github.com/Anastasia-A-2020/calculator#index.html",
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "browser-sync": "^2.28.1",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-js-minify": "^0.0.3",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.58.3"
+  },
+  "dependencies": {}
+}

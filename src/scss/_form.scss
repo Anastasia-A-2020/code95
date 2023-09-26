@@ -1,0 +1,87 @@
+.container {
+  width: 372px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid $main-text-color-light;
+  border-radius: 4px;
+  overflow-y: auto; // web
+  -webkit-overflow-scrolling: touch; //web
+
+  @media screen and (min-width: 810px) {
+    width: 570px;
+  }
+}
+
+.form {
+  // max-width: 580px;
+  // min-width: 320px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0.5rem;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $main-text-color-light;
+  overflow: hidden;
+}
+
+.form__subtitle {
+  margin-bottom: 0.5rem;
+}
+
+.form__visit,
+.form__order,
+.form__delivery,
+.form__livingInPoland,
+.form__employer {
+  display: grid;
+  justify-content: space-evenly;
+}
+
+.form__livingInPoland {
+  @media screen and (max-width: 480px) {
+    margin-right: 0;
+    display: grid;
+    justify-content: space-evenly;
+  }
+}
+
+.form__label {
+  &:not(:last-of-type) {
+    .form__visit > &,
+    .form__order > &,
+    .form__delivery > &,
+    .form__livingInPoland > &,
+    .form__employer > & {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.form__employer {
+  display: grid;
+  justify-content: space-evenly;
+}
+
+.form__price-label {
+  display: flex;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 650px) {
+    justify-content: center;
+  }
+}
+
+.form__price-input {
+  margin-left: 0.5rem;
+  outline: none;
+  border-radius: 4px;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  background-color: $accent-text-color;
+  color: $main-text-color-light;
+  min-width: 70px;
+}
